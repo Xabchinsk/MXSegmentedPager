@@ -118,6 +118,8 @@ typedef NS_ENUM(NSInteger, MXSegmentedControlPosition) {
  */
 - (void)segmentedPager:(MXSegmentedPager *)segmentedPager didEndDraggingWithParallaxHeader:(MXParallaxHeader *)parallaxHeader;
 
+- (void)segmentedPager:(MXSegmentedPager *)segmentedPager didEndScrollingWith:(MXParallaxHeader *)parallaxHeader;
+
 /**
  Asks the delegate if the segmented-pager should scroll to the top.
  If the delegate doesn’t implement this method, YES is assumed.
@@ -231,6 +233,8 @@ typedef NS_ENUM(NSInteger, MXSegmentedControlPosition) {
  The pager. The pager will be placed above or below the segmented control depending on the segmentedControlPosition property.
  */
 @property (nonatomic, readonly) MXPagerView *pager;
+
+@property (nonatomic, readonly) UIScrollView *contentView;
 
 /**
  The padding from the top, left, right, and bottom of the segmentedControl
