@@ -213,12 +213,6 @@
     }
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    if (scrollView == self.contentView && [self.delegate respondsToSelector:@selector(segmentedPager:didEndScrollingWith:)]) {
-        [self.delegate segmentedPager:self didEndScrollingWith:scrollView.parallaxHeader];
-    }
-}
-
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (scrollView == self.contentView && [self.delegate respondsToSelector:@selector(segmentedPager:didEndDraggingWithParallaxHeader:)]) {
         [self.delegate segmentedPager:self didEndDraggingWithParallaxHeader:scrollView.parallaxHeader];
